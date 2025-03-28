@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container">
+    <div>
+        {% include 'user/carSearchBar.html' %}
+    </div>
+
+    <h1>Car Inventory</h1>
+    {% if user.is_superuser %}
+    <a href="{% url 'create-car-room' %}">
+      <button style="height: 50px; width: 200px; border: none; border-radius: 0.5rem; color: #fff; background-color: #020102; cursor: pointer;">Create Car Room</button>
+    </a>
+    {% endif %}
+    
+    <div class="car-list">
+      {% for car in cars %}
+        <div class="car-item">
+          {% if car.photos.all %}
+            <a href="{% url 'car' car.id %}">
+              <img src="{{ car.photos.first.image.url }}" alt="{{ car.make }} {{ car.model }}" style="aspect-ratio: 4 / 3;">
+            </a>
+          {% else %}
+            <!-- <p>No images available</p> -->
+             <a href="{% url 'car' car.id %}">
+              <img src="{% static 'images/default-inventory-image-car.jpeg' %}" alt="image" style="aspect-ratio: 4 / 3;">
+             </a>
+          {% endif %}
+          <h3>{{ car.make }} {{ car.model }} ({{ car.year }})</h3>
+          <p>Price: ${{ car.price }}</p>
+          <div>
+            <a href="{% url 'car' car.id %}"">
+              <button class="view-car-details">View Details</button>
+            </a>
+          </div>
+          <div class="inventory-update-delete-button">
+            {% if user.is_superuser %}
+            <a href="{% url 'update-car-room' car.id %}">
+              <button style="height: 35px; width: 100px; color: #fff; background-color: #020102; border: none; border-radius: 0.25rem; cursor: pointer;">Edit</button>
+            </a>
+            <a href="{% url 'delete-car-room' car.id %}">
+              <button style="height: 35px; width: 100px; color: #fff; background-color: #020102; border: none; border-radius: 0.25rem; cursor: pointer;">Delete</button>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% empty %}
+          <p>No cars match your criateria.</p>
+      {% endfor %}
+    </div>
+
+    <div>
+      {% include 'user/info.html' %}
+    </div>
+</div>
+
+{% endblock content %}

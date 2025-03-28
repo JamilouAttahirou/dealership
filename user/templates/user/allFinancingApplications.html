@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Finance Applications</h1>
+
+  <div class="all-financings">
+  {% if financings %}
+    {% for financing in financings %}
+    <div class="single-financing">
+      <!-- <div>
+      <tr>
+        <td>{{ financing.first_name }}</td>
+                        <td>{{ financing.middle_name }}</td>
+                        <td>{{ financing.last_name }}</td>
+                        <td>{{ financing.date_of_birth }}</td>
+                        <td>{{ financing.email }}</td>
+                        <td>{{ financing.phone }}</td>
+                        <td>{{ financing.work_phone }}</td>
+                        <td>{{ financing.last_four_digits_social_security_number }}</td>
+                        <td>{{ financing.street }}</td>
+                        <td>{{ financing.apartment }}</td>
+                        <td>{{ financing.city }}</td>
+                        <td>{{ financing.get_state_display }}</td> <!-- State Choice --
+                        <td>{{ financing.zip_code }}</td>
+                        <td>{{ financing.get_residence_status_display }}</td> <!-- Residence Status Choice --
+                        <td>{{ financing.landlord_mortgage_holder }}</td>
+                        <td>{{ financing.rent_mortgage_monthly_amount }}</td>
+                        <td>{{ financing.get_time_at_current_residence_display }}</td> <!-- Time at Current Residence Choice --
+                        <td>{{ financing.get_previous_residence_display }}</td> <!-- Previous Residence Status Choice --
+                        <td>{{ financing.previous_street }}, {{ financing.previous_apartment }}, {{ financing.city_2 }}, {{ financing.get_state_2_display }}, {{ financing.zip_code_2 }}</td>
+                        <td>{{ financing.place_of_employment }}</td>
+                        <td>{{ financing.street_3 }}, {{ financing.city_3 }}, {{ financing.get_state_3_display }}, {{ financing.zip_code_3 }}</td>
+                        <td>{{ financing.occupation }}</td>
+                        <td>{{ financing.business_phone }}</td>
+                        <td>{{ financing.get_time_at_current_employer_display }}</td> <!-- Time at Current Employer Choice --
+                        <td>{{ financing.gross_salary }}</td>
+                        <td>{{ financing.first_name }}</td>
+                        <td>{{ financing.middle_name }}</td>
+                        <td>{{ financing.last_name }}</td>
+                        <td>{{ financing.date_of_birth }}</td>
+                        <td>{{ financing.email }}</td>
+                        <td>{{ financing.phone }}</td>
+                        <td>{{ financing.work_phone }}</td>
+                        <td>{{ financing.last_four_digits_social_security_number }}</td>
+                        <td>{{ financing.street }}</td>
+                        <td>{{ financing.apartment }}</td>
+                        <td>{{ financing.city }}</td>
+                        <td>{{ financing.get_state_display }}</td> <!-- State Choice --
+                        <td>{{ financing.zip_code }}</td>
+                        <td>{{ financing.get_residence_status_display }}</td> <!-- Residence Status Choice --
+                        <td>{{ financing.landlord_mortgage_holder }}</td>
+                        <td>{{ financing.rent_mortgage_monthly_amount }}</td>
+                        <td>{{ financing.get_time_at_current_residence_display }}</td> <!-- Time at Current Residence Choice --
+                        <td>{{ financing.get_previous_residence_display }}</td> <!-- Previous Residence Status Choice --
+                        <td>{{ financing.previous_street }}, {{ financing.previous_apartment }}, {{ financing.city_2 }}, {{ financing.get_state_2_display }}, {{ financing.zip_code_2 }}</td>
+                        <td>{{ financing.place_of_employment }}</td>
+                        <td>{{ financing.street_3 }}, {{ financing.city_3 }}, {{ financing.get_state_3_display }}, {{ financing.zip_code_3 }}</td>
+                        <td>{{ financing.occupation }}</td>
+                        <td>{{ financing.business_phone }}</td>
+                        <td>{{ financing.get_time_at_current_employer_display }}</td> !-- Time at Current Employer Choice --
+                        <td>{{ financing.gross_salary }}</td>
+        <td><a href="{% url 'all_financing_applications' ">View Details</a></td>
+    </tr>
+    </div> -->
+    
+      <div>
+        <small>{{financing.created|timesince}} ago</small>
+        <h5>{{financing.id}} -- <a href="{% url 'all_financing_applications' %}">{{financing.first_name}} {{financing.last_name}}</a></h5>
+        <hr>
+      </div>
+    </div>
+    {% endfor %}
+  
+  {% else %}
+  <p>No finance applications found.</p>
+  {% endif %}
+  </div>
+</div>
+
+{% endblock content %}
