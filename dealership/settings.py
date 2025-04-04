@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-nj^q3*20o#di9u(d3^b0$r$e3pu9!475-x*+j3-x5)yz)d%xkr
 DEBUG = True
 
 ALLOWED_HOSTS = ['dealership-production-8acb.up.railway.app', 'https://dealership-production-8acb.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['dealership-production-8acb.up.railway.app', 'https://dealership-production-8acb.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://dealership-production-8acb.up.railway.app']
 
 
 
