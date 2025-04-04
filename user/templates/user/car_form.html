@@ -1,0 +1,100 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Make</span>
+            </label>
+            {% render_field form.make class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Model</span>
+            </label>
+            {% render_field form.model class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Year</span>
+            </label>
+            {% render_field form.year class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Exterior Color</span>
+            </label>
+            {% render_field form.exterior_color class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Interior Color</span>
+            </label>
+            {% render_field form.interior_color class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Mileage</span>
+            </label>
+            {% render_field form.mileage class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Engine</span>
+            </label>
+            {% render_field form.engine class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Vin Number</span>
+            </label>
+            {% render_field form.vin_number class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Transmission</span>
+            </label>
+            {% render_field form.transmission class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Stock Number</span>
+            </label>
+            {% render_field form.stock_number class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Price</span>
+            </label>
+            {% render_field form.price class="finance-user-input" %}
+        </div>
+
+        <div class="finance-details-content">
+            <label for="" class="finance-user-label">
+                <span>Description</span>
+            </label>
+            {% render_field form.description class="finance-user-input" %}
+        </div>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock content %}
