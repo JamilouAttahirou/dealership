@@ -1,0 +1,464 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="container">
+    <h1>Finance Room</h1>
+    <div class="finance-details-container">
+        <h2><strong>Finance Application</strong></h2>
+
+        <div>
+            <p>
+                Start the financing now on your next car. Fill out this secure application 
+                with all the required informations and an agent will responsd to your inquirity. 
+                We look forward to assisting you and thanks for fanancing with us.
+            </p>
+            <div>
+                <img src="" alt="">
+            </div>
+        </div>
+
+        <p class="">* Indicates a required field</p>
+
+        <div class="finance-details-sections">
+            <div>
+                <form method="POST" action="" class="finance-details">
+                    {% csrf_token %}
+
+                    <h3>Contact Information</h3>
+                    <hr color="#db2543">
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="first_name" class="finance-user-label">
+                            <span>First Name<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.first_name class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="last_name" class="finance-user-label">
+                            <span>Last Name<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.last_name class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="middle_name" class="finance-user-label">
+                            <span>Middle Name</span>
+                        </label>
+                        {% render_field financing_form.middle_name class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="DOB" class="finance-user-label">
+                            <span>Date of Birth<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.date_of_birth class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="email" class="finance-user-label">
+                            <span>Email<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.email class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="phone" class="finance-user-label">
+                            <span>Phone<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.phone class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="work_phone" class="finance-user-label">
+                            <span>Work Phone</span>
+                        </label>
+                        {% render_field financing_form.work_phone class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="last_four_digits_social_security_number" class="finance-user-label">
+                            <span>Last Four Digits of Social Security Number<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.last_four_digits_social_security_number class="finance-user-input" %}
+                    </div>
+                    <br>
+
+
+                    <h3>Address Information</h3>
+                    <hr color="#db2543">
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="street" class="finance-user-label">
+                            <span>Street<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.street class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="apartment" class="finance-user-label">
+                            <span>Apartment</span>
+                        </label>
+                        {% render_field financing_form.apartment class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="city" class="finance-user-label">
+                            <span>City<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.city class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="state" class="finance-user-label">
+                            <span>State<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.state class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="zip_code" class="finance-user-label">
+                            <span>Zip Code<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.zip_code class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="residence_status" class="finance-user-label">
+                            <span>Do you rent or own your residence?</span>
+                        </label>
+                        {% render_field financing_form.residence_status class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="landlord-mortgage_holder" class="finance-user-label">
+                            <span>Landlord/Mortgage Holder</span>
+                        </label>
+                        {% render_field financing_form.landlord_mortgage_holder class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="rent-mortgage_monthly_amount" class="finance-user-label">
+                            <span>Rent/Mortgage Monthly Amount<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.rent_mortgage_monthly_amount class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="time_at_current_residence" class="finance-user-label">
+                            <span>Time at Current Residence<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.time_at_current_residence class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_residence" class="finance-user-label">
+                            <span>Previous Residence</span>
+                        </label>
+                        {% render_field financing_form.previous_residence class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_street" class="finance-user-label">
+                            <span>Previous Street</span>
+                        </label>
+                        {% render_field financing_form.previous_street class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_apartment" class="finance-user-label">
+                            <span>Previous Apartment</span>
+                        </label>
+                        {% render_field financing_form.previous_apartment class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="city" class="finance-user-label">
+                            <span>City</span>
+                        </label>
+                        {% render_field financing_form.city_2 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="state" class="finance-user-label">
+                            <span>State</span>
+                        </label>
+                        {% render_field financing_form.state_2 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="zip_code" class="finance-user-label">
+                            <span>Zip Code</span>
+                        </label>
+                        {% render_field financing_form.zip_code_2 class="finance-user-input" %}
+                    </div>
+                    <br>
+
+
+                    <h3>Employment Information</h3>
+                    <hr color="#db2543">
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="employment_status" class="finance-user-label">
+                            <span>Employment Status<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.employment_status class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="place_of_employment" class="finance-user-label">
+                            <span>Place of Employment</span>
+                        </label>
+                        {% render_field finance_form.place_of_employment class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="street" class="finance-user-label">
+                            <span>Street</span>
+                        </label>
+                        {% render_field financing_form.street_3 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="city" class="finance-user-label">
+                            <span>City</span>
+                        </label>
+                        {% render_field financing_form.city_3 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="state" class="finance-user-label">
+                            <span>State</span>
+                        </label>
+                        {% render_field financing_form.state_3 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="zip_code" class="finance-user-label">
+                            <span>Zip Code</span>
+                        </label>
+                        {% render_field financing_form.zip_code_3 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="occupation" class="finance-user-label">
+                            <span>Occupation<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.occupation class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="business_phone" class="finance-user-label">
+                            <span>Business Phone</span>
+                        </label>
+                        {% render_field financing_form.business_phone class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="time_at_current_employer" class="finance-user-label">
+                            <span>Time At Current Employer<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.time_at_current_employer class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="gross_salary" class="finance-user-label">
+                            <span>Gross Salary</span>
+                        </label>
+                        {% render_field financing_form.gross_salary class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="net_salary" class="finance-user-label">
+                            <span>Net Salary<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.net_salary class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="other_income" class="finance-user-label">
+                            <span>Other Income</span>
+                        </label>
+                        {% render_field financing_form.other_income class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_employment" class="finance-user-label">
+                            <span>Privious Employment</span>
+                        </label>
+                        {% render_field financing_form.previous_employment class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="street" class="finance-user-label">
+                            <span>Street</span>
+                        </label>
+                        {% render_field financing_form.street_4 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="city" class="finance-user-label">
+                            <span>City</span>
+                        </label>
+                        {% render_field financing_form.city_4 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="state" class="finance-user-label">
+                            <span>State</span>
+                        </label>
+                        {% render_field financing_form.state_4 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="zip_code" class="finance-user-label">
+                            <span>Zip Code</span>
+                        </label>
+                        {% render_field financing_form.zip_code_4 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_occupation" class="finance-user-label">
+                            <span>Previous Occupation</span>
+                        </label>
+                        {% render_field financing_form.previous_occupation class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="previous_employer_phone" class="finance-user-label">
+                            <span>Previous Employer Phone</span>
+                        </label>
+                        {% render_field financing_form.previous_employer_phone class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="time_at_previous_employer" class="finance-user-label">
+                            <span>Time At Previous Employer</span>
+                        </label>
+                        {% render_field financing_form.time_at_previous_employer class="finance-user-input" %}
+                    </div>
+                    <br>
+
+                    <h3>Bank Information</h3>
+                    <hr color="#db2543">
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="name_of_bank" class="finance-user-label">
+                            <span>Name Bank</span>
+                        </label>
+                        {% render_field financing_form.name_of_bank class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="account_types" class="finance-user-label">
+                            <span>Account Types</span>
+                        </label>
+                        {% render_field financing_form.account_types class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="name_of_bank" class="finance-user-label">
+                            <span>Name Bank</span>
+                        </label>
+                        {% render_field financing_form.name_of_bank_2 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="account_types" class="finance-user-label">
+                            <span>Account Types</span>
+                        </label>
+                        {% render_field financing_form.account_types_2 class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="lender" class="finance-user-label">
+                            <span>Lender</span>
+                        </label>
+                        {% render_field financing_form.lender class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="finance_method" class="finance-user-label">
+                            <span>Finance Method<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.finance_method class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="monthly_payment" class="finance-user-label">
+                            <span>Monthly Payment<span aria-hidden="true" class="asterisk">*</span></span>
+                        </label>
+                        {% render_field financing_form.monthly_payment class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="total_debt" class="finance-user-label">
+                            <span>Total Debt</span>
+                        </label>
+                        {% render_field financing_form.total_debt class="finance-user-input" %}
+                    </div>
+                    <br>
+                    <div class="finance-details-content">
+                        <label for="length_of_loan" class="finance-user-label">
+                            <span>Length of Loan</span>
+                        </label>
+                        {% render_field financing_form.length_of_loan class="finance-user-input" %}
+                    </div>
+
+                    <h3>Comments</h3>
+                    <hr color="#db2543">
+                    <br>
+                    <div>
+                        {% render_field financing_form.body class="finance-user-input" %}
+                    </div>
+                    <br>
+
+                    <div class="finance-submit-button">
+                        <button type="submit" style="width: 200px; height: 50px; font-size: 110%; color: #fff; background-color: #020102; border: none; margin-bottom: 20px;">Submit</button>
+                    </div>
+                </form>
+                <!-- Popup -->
+                <div class="popup" id="popup">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="m424-408-86-86q-11-11-28-11t-28 11q-11 11-11 28t11 28l114 114q12 12 28 12t28-12l226-226q11-11 11-28t-11-28q-11-11-28-11t-28 11L424-408Zm56 328q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                    <h2>Thank You!</h2>
+                    <p>You Financing Application was successfully submitted.</p>
+                    <button onclick="closePopup()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if user.is_superuser %}
+    <div>
+        <a href="{% url 'all_financing_applications' %}">
+            <button style="height: 50px; width: 200px; border: none; border-radius: 0.5rem; color: #fff; background-color: #020102; cursor: pointer;">All Applications</button>
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+
+<!-- the  popup script -->
+<script>
+    let popup = document.getElementById("popup");
+  
+    function openPopup(){
+        popup.classList.add("open-popup");
+    }
+  
+    function closePopup(){
+        popup.classList.remove("open-popup");
+    }
+  
+    // Automatically open popup if form was successfully submitted
+    {% if popup %}
+      window.onload = function() {
+        openPopup();
+      };
+    {% endif %}
+  </script>
+
+{% endblock content %}

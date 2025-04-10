@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Finance Applications</h1>
+
+  <div class="all-financings">
+  {% if financings %}
+    {% for financing in financings %}
+    <div class="single-financing">
+      <div>
+        <small>{{financing.created|timesince}} ago</small>
+        <h5>{{financing.id}} -- <a href="{% url 'all_financing_applications' %}">{{financing.first_name}} {{financing.last_name}}</a></h5>
+        <hr>
+      </div>
+    </div>
+    {% endfor %}
+  
+  {% else %}
+  <p>No finance applications found.</p>
+  {% endif %}
+  </div>
+</div>
+
+{% endblock content %}

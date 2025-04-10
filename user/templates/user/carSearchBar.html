@@ -1,0 +1,143 @@
+{% load static %}
+
+<div class="search-room">
+    <div class="search-bar">
+        <div class="dropdown">
+                <button class="dropdown-button">
+                    <span>
+                        {% if request.GET.year %}
+                            {{ request.GET.year }}
+                        {% else %}
+                            Select Year
+                        {% endif %}
+                    </span>
+                    <span class="material-symbols-outlined">unfold_more</span>
+                </button class="dropdown-button">
+                <div class="dropdown-content">
+                    <a href="?year=">Select Year</a>
+                    <a href="?year=2005" {% if request.GET.year == '2005' %}selected{% endif %}>2005</a>
+                    <a href="?year=2006" {% if request.GET.year == '2006' %}selected{% endif %}>2006</a>
+                    <a href="?year=2007" {% if request.GET.year == '2007' %}selected{% endif %}>2007</a>
+                    <a href="?year=2008" {% if request.GET.year == '2008' %}selected{% endif %}>2008</a>
+                    <a href="?year=2009" {% if request.GET.year == '2009' %}selected{% endif %}>2009</a>
+                    <a href="?year=2010" {% if request.GET.year == '2010' %}selected{% endif %}>2010</a>
+                    <a href="?year=2011" {% if request.GET.year == '2011' %}selected{% endif %}>2011</a>
+                    <a href="?year=2012" {% if request.GET.year == '2012' %}selected{% endif %}>2012</a>
+                    <a href="?year=2013" {% if request.GET.year == '2013' %}selected{% endif %}>2013</a>
+                    <a href="?year=2014" {% if request.GET.year == '2014' %}selected{% endif %}>2014</a>
+                    <a href="?year=2015" {% if request.GET.year == '2015' %}selected{% endif %}>2015</a>
+                    <a href="?year=2016" {% if request.GET.year == '2016' %}selected{% endif %}>2016</a>
+                    <a href="?year=2017" {% if request.GET.year == '2017' %}selected{% endif %}>2017</a>
+                    <a href="?year=2018" {% if request.GET.year == '2018' %}selected{% endif %}>2018</a>
+                    <a href="?year=2019" {% if request.GET.year == '2019' %}selected{% endif %}>2019</a>
+                    <a href="?year=2020" {% if request.GET.year == '2020' %}selected{% endif %}>2020</a>
+                    <a href="?year=2021" {% if request.GET.year == '2021' %}selected{% endif %}>2021</a>
+                    <a href="?year=2022" {% if request.GET.year == '2022' %}selected{% endif %}>2022</a>
+                    <a href="?year=2023" {% if request.GET.year == '2023' %}selected{% endif %}>2023</a>
+                    <a href="?year=2024" {% if request.GET.year == '2024' %}selected{% endif %}>2024</a>
+                </div>
+        </div>
+
+        <div class="dropdown">
+                <button class="dropdown-button">
+                    <span>
+                        {% if request.GET.make %}
+                            {{ request.GET.make }}
+                        {% else %}
+                            Select Make
+                        {% endif %}
+                    </span>
+                    <span class="material-symbols-outlined">unfold_more</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="?make=">Select Make</a>
+                    <a href="?make=Toyota" {% if request.GET.make == 'Toyota' %}selected{% endif %}>Toyota</a>
+                    <a href="?make=Lexus" {% if request.GET.make == 'Lexus' %}selected{% endif %}>Lexus</a>
+                    <a href="?make=Honda" {% if request.GET.make == 'Honda' %}selected{% endif %}>Honda</a>
+                    <a href="?make=Mercedes" {% if request.GET.make == 'Mercedes' %}selected{% endif %}>Mercedes</a>
+                    <a href="?make=Nissan" {% if request.GET.make == 'Nissan' %}selected{% endif %}>Nissan</a>
+                    <a href="?make=Hundai" {% if request.GET.make == 'Hundai' %}selected{% endif %}>Hundai</a>
+                    <a href="?make=BMW" {% if request.GET.make == 'BMW' %}selected{% endif %}></a>
+                    <a href="?make=" {% if request.GET.make == '' %}selected{% endif %}></a>
+                </div>
+        </div>
+
+        <div class="dropdown">
+                <button class="dropdown-button">
+                    <span>
+                        {% if request.GET.model %}
+                            {{ request.GET.model }}
+                        {% else %}
+                            Select Model
+                        {% endif %}
+                    </span>
+                    <span class="material-symbols-outlined">unfold_more</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="?model=">Select Model</a> 
+                    <a href="?model=Camry" {% if request.GET.model == "Camry" %}selected{% endif %}>Camry</a>
+                    <a href="?model=Corolla" {% if request.GET.model == 'Corolla' %}selected{% endif %}>Corolla</a>
+                    <a href="?model=RAV4-SUV" {% if request.GET.model == 'RAV4 SUV' %}selected{% endif %}>RAV4 SUV</a>
+                    <a href="?model=Highlander-SUV" {% if request.GET.model == 'Highlander SUV' %}selected{% endif %}>Highlander SUV</a>
+                    <a href="?model=4Runner-SUV" {% if request.GET.model == '4Runner SUV' %}selected{% endif %}>4Runner SUV</a>
+                    <a href="?model=Land-Cruiser-SUV" {% if request.GET.model == 'Land Cruiser SUV' %}selected{% endif %}>Land Cruiser SUV</a>
+                    <a href="?model=Sienna-van" {% if request.GET.model == 'Sienna' %}selected{% endif %}>Sienna Van</a>
+                    <a href="?model=Tundra-Truck" {% if request.GET.model == 'Tundra Truck' %}selected{% endif %}>Tundra Truck</a>
+                    <a href="?model=Tacoma-Truck" {% if request.GET.model == 'Tacoma Truck' %}selected{% endif %}>Tacoma Truck</a>
+                    <a href="?model=Accord" {% if request.GET.model == 'Accord' %}selected{% endif %}>Accord</a>
+                    <a href="?model=Civic" {% if request.GET.model == 'Civic' %}selected{% endif %}>Civic</a>
+                    <a href="?model=CR-V-SUV" {% if request.GET.model == 'CR-V' %}selected{% endif %}>CR-V</a>
+                    <a href="?model=CR-V-Hybrid-SUV" {% if request.GET.model == 'CR-V Hybrid SUV' %}selected{% endif %}>CR-V Hybrid</a>
+                    <a href="?model=Odyssey-van" {% if request.GET.model == 'Odyssey' %}selected{% endif %}>Odyssey Van</a>
+                    <a href="?model=NX" {% if request.GET.model == 'NX' %}selected{% endif %}>NX</a>
+                    <a href="?model=NX-Hybrid" {% if request.GET.model == 'NX Hybrid' %}selected{% endif %}>NX Hybrid</a>
+                    <a href="?model=RX" {% if request.GET.model == 'RX' %}selected{% endif %}>RX</a>
+                    <a href="?model=RX-Hybrid" {% if request.GET.model == 'RX Hybrid' %}selected{% endif %}>RX Hybrid</a>
+                    <a href="?model=RX500h" {% if request.GET.model == 'RX 500h' %}selected{% endif %}>RX 500h</a>
+                    <a href="?model=TX" {% if request.GET.model == 'TX' %}selected{% endif %}>TX</a>
+                    <a href="?model=TX-Hybrid" {% if request.GET.model == 'TX Hybrid' %}selected{% endif %}>TX Hybrid</a>
+                    <a href="?model=GX" {% if request.GET.model == 'GX' %}selected{% endif %}>GX</a>
+                    <a href="?model=LX" {% if request.GET.model == 'LX' %}selected{% endif %}>LX</a>
+                    <a href="?model=LX-Hybrid" {% if request.GET.model == 'LX Hybrid' %}selected{% endif %}>LX Hybrid</a>
+                    <a href="?model=C-Class" {% if request.GET.model == 'C Class' %}selected{% endif %}>C-Class Sedan</a>
+                    <a href="?model=E-Class" {% if request.GET.model == 'E Class' %}selected{% endif %}>E-Class Sedan</a>
+                    <a href="?model=S-Class" {% if request.GET.model == 'S Class' %}selected{% endif %}>S-Class Sedan</a>
+                    <a href="?model=GLA-SUV" {% if request.GET.model == 'GLA SUV' %}selected{% endif %}>GLA SUV</a>
+                    <a href="?model=GLB-SUV" {% if request.GET.model == 'GLB SUV' %}selected{% endif %}>GLB SUV</a>
+                    <a href="?model=GLC-SUV" {% if request.GET.model == 'GLC SUV' %}selected{% endif %}>GLC SUV</a>
+                    <a href="?model=GLE-SUV" {% if request.GET.model == 'GLE SUV' %}selected{% endif %}>GLE SUV</a>
+                    <a href="?model=G-Class" {% if request.GET.model == 'G-Class SUV' %}selected{% endif %}>G-Class SUV</a>
+                    <a href="?model=" {% if request.GET.model == '' %}selected{% endif %}></a>
+                </div>
+        </div>
+
+        <div class="dropdown">
+                <button class="dropdown-button">
+                    <span>
+                        {% if request.GET.price %}
+                            {{ request.GET.price }}
+                        {% else %}
+                            Select Price
+                        {% endif %}
+                    </span>
+                    <span class="material-symbols-outlined">unfold_more</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="?price=">Select Price</a>
+                    <a href="?price=Under $5k" {% if request.GET.price == 'Under $5k' %}selected{% endif %}>Under $5K</a>
+                    <a href="?price=$5000-$10000" {% if request.GET.price == '$5000-$10000' %}selected{% endif %}>$5000-$10000</a>
+                    <a href="?price=$10000-$19999" {% if request.GET.price == '$10000-$19999' %}selected{% endif %}>$10000-$19999</a>
+                    <a href="?price=$20000-$29999" {% if request.GET.price == '$20000-$29999' %}selected{% endif %}>$20000-$29999</a>
+                    <a href="?price=$30000-$39999" {% if request.GET.price == '$30000-$39999' %}selected{% endif %}>$30000-$39999</a>
+                    <a href="?price=$40000-$49999" {% if request.GET.price == '$40000-$49999' %}selected{% endif %}>$40000-$49999</a>
+                    <a href="?price=$50000-$59999" {% if request.GET.price == '$50000-$59999' %}selected{% endif %}>$50000-$59999</a>
+                </div>                                                      
+        </div>
+    
+        <div class="search-box">
+            <button class="search-button" type="submit" onclick="inventoryRoom()">Search</button> 
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'scripts/dropdown.js' %}"></script>

@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>All Messages</h1>
+
+  <div class="all-messsages">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="single-message">
+        <div>
+          <small>{{message.created|timesince}} ago</small>
+          <h5>{{message.id}} -- <a href="{% url 'all_messages' %}">{{message.first_name}} {{message.last_name}}</a></h5>
+          <small>{{message.body}}</small>
+          <hr>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+  <p>No Messages found.</p>
+  {% endif %}
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="display-title">
+    <h1>Featurted Vehicles</h1>
+</div>
+<hr>
+
+<div class="">
+  <div class="display swiper">
+    <div class="room-wrapper">
+      <div class="car-list-display-room swiper-wrapper">
+        {% for car in cars %}
+          <div class="car-item-display-room swiper-slide">
+            {% if car.photos.all %}
+              <a href="{% url 'car' car.id %}">
+                <img src="{{ car.photos.first.image.url }}" alt="{{ car.make }} {{ car.model }}" style="aspect-ratio: 4 / 3;">
+              </a>
+            {% else %}
+              <!-- <p>No images available</p> -->
+               <a href="{% url 'car' car.id %}">
+                <img src="{% static 'images/default-inventory-image-car.jpeg' %}" alt="image" style="aspect-ratio: 4 / 3;">
+               </a>
+            {% endif %}
+            <h3>{{ car.make }} {{ car.model }} ({{ car.year }})</h3>
+            <p>Price: ${{ car.price }}</p>
+            <div>
+              <a href="{% url 'car' car.id %}"">
+                <button class="view-car-details">View Details</button>
+              </a>
+            </div>
+          </div>
+          {% empty %}
+            <p>No cars match your criateria.</p>
+        {% endfor %}
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
+<!-- linking the swiper js script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- linking the  custum script -->
+<script src="{% static 'scripts/swiper.js' %}"></script>

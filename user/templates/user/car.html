@@ -1,0 +1,88 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container">
+    <h1>{{ car.make }} {{ car.model }} Details</h1>
+    <div class="car-details-room">
+        <div style="">
+            <div class="car-details-section">
+                <div class="swiper-container car-pictures-container">
+                  <div class="swiper-wrapper car-pictures-wrapper">
+                    {% for photo in car.photos.all %}
+                      <div class="swiper-slide car-pictures-slide">
+                        <img src="{{ photo.image.url }}" alt="{{ car.make }} {{ car.model }}">
+                      </div>
+                      {% empty %}
+                        <div class="">
+                            <!-- <p>No photos available</p> -->
+                            <img src="{% static 'images/default-inventory-image-car.jpeg' %}" alt="image">
+                        </div>
+                    {% endfor %}
+                  </div>
+                </div>
+    
+                <div class="car-text-details" style="margin-right: 100px;">
+                    <div class="car-text-details-section1" style="height: 100px;">
+                        <p><strong>Price:</strong> ${{ car.price }}</p>
+                    </div>
+                    <div class="car-text-details-section2">
+                        <p style="height: 50px; align-content: center;">
+                            <strong>Engine:</strong>
+                            <span>{{ car.engine }}</span>
+                        </p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Transmission:</strong> {{ car.transmission }}</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>VIN:</strong> {{ car.vin_number }}</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Mileage:</strong> {{ car.mileage }} miles</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Exterior:</strong> {{ car.exterior_color }}</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Interior:</strong> {{ car.interior_color }}</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Stock Number:</strong> {{ car.stock_number }}</p><hr>
+                        <p style="height: 50px; align-content: center;"><strong>Year:</strong> {{ car.year }}</p>
+                    </div>
+                    <!-- <p><strong>Description:</strong> {{ car.description }}</p><hr> -->
+                </div>
+            </div>
+        </div>
+
+        {% if user.is_superuser %}
+        <div>
+            <h3>Upload New Photos</h3>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ formset.management_form }}
+            <div class="formset">
+                {% for car_form in formset %}
+                <div class="form-row">
+                    {{ car_form.as_p }}
+                </div>
+                {% endfor %}
+            </div>
+        <input type="submit" value="Upload Photos">
+        </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Swiper.js CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<!-- Swiper.js JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- linking the  custum script -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+    loop: true, /* Enable looping if you want to wrap around the images */
+    spaceBetween: 10, /* Space between the images (optional) */
+    slidesPerView: 1, /* Only show one image at a time */
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+{% endblock content %}

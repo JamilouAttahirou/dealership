@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <p class="service-title" style="max-width: 100%; padding: 20px; box-sizing: border-box;">
+        <strong>Automotive Services by Best Buy Auto Group, LLC Greensboro, NC</strong>
+    </p>
+
+    <div>
+      <div class="service-container">
+        <div class="service-content">
+          <div class="service-info">
+            <h4>Services available</h4>
+            <ul>
+              <li>Computer Diagnostics</li>
+              <li>Engine light Diagnostics</li>
+              <li>Batteries</li>
+              <li>Oil Change</li>
+            </ul>
+            <a href="">
+              <button>SCHEDULE SERVICE</button>
+            </a>
+          </div>
+          <div class="service-image">
+            <img src="{% static 'images/service-1.jpeg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'user/store_hours.html' %}
+</div>
+
+{% endblock content %}

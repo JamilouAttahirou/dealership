@@ -1,0 +1,67 @@
+<main class="main">
+    {% load static %}
+    <!-- First section of Navigation Bar -->
+    <div class="navbar1" style="display: flex;">
+        <span>Sales: <a href="tel:+19803459107">980-345-9107</a></span>&nbsp;
+        <span>Service: <a href="tel:+13362154185">336-215-4185</a></span>&nbsp;&nbsp;
+        <div style="display: flex;">
+            <a href="/directions/" class="address"><span class="material-symbols-sharp">location_on</span></a>
+            <a href="/directions/" class="address hideOnMobile"><span>5791 Highland Groove Dr, Summerfield, NC 27358</span></a>
+        </div>
+    </div>
+
+    <!-- section section of Navigation Bar -->
+    <div class="navbar2">
+        <h1></h1>
+        <a href="/" class="logo"><h1>LOGO</h1></a>
+        <a href="/" class="brand hideOnMobile"><h1>Best Buy Auto</h1></a>
+        <!-- login/logout -->
+         <div>
+            {% if request.user.is_authenticated %}
+            <p style="color: #fff;">Hello {{request.user}}</p>
+            <a href="{% url 'logout' %}"><button class="login-logout">Logout</button></a>
+            {% else %}
+            <a href="{% url 'login' %}"><button class="login-logout">Login</button></a>
+            {% endif %}
+         </div>
+        <h1></h1>
+     </div>
+
+    <!-- Third section of Navigation Bar -->
+    <div>
+        <!-- navbar -->
+        <header>
+            <!-- Nav container -->
+            <div class="nav">
+                <ul class="sidebar navbar3 container">
+                    <li onclick=hideSideBar()><svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" fill="#1f1f1f"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></li>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/inventory/">Inventory</a></li>
+                    <li><a href="/service/">Service</a></li>
+                    <li><a href="/financing/">Financing</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                    <li><a href="/aboutus/">About Us</a></li>
+                    <li><a href=""></a></li>
+                </ul>
+                <ul class="navbar3">
+                    <li class="hideOnMobile"><a href=""></a></li>
+                    <li class="hideOnMobile"><a href="/" class="active">Home</a></li>
+                    <li class="hideOnMobile"><a href="/inventory/">Inventory</a></li>
+                    <li class="hideOnMobile"><a href="/service/">Service</a></li>
+                    <li class="hideOnMobile"><a href="/financing/">Financing</a></li>
+                    <li class="hideOnMobile"><a href="/contact/">Contact Us</a></li>
+                    <li class="hideOnMobile"><a href="/aboutus/">About Us</a></li>
+                    <li><a href="/"></a></li>
+                    <li class="menu-btn" onclick=showSideBar()>
+                        <a>MENU</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" fill="#1f1f1f"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <hr>
+</main>
+
+<script src="{% static 'scripts/sideBar.js' %}"></script>
+<script src="{% static 'scripts/navbar3.js' %}"></script>

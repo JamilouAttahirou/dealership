@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="cover-container">
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img id="slide-1" src="{% static 'images/pexels-introspectivedsgn-5182306-3.jpg' %}" alt="Imag1">
+      </div>
+      <div class="swiper-slide">
+        <img id="slide-2" src="{% static 'images/pexels-introspectivedsgn-5628293-2.jpg' %}" alt="Image2">
+      </div>
+      <div class="swiper-slide">
+        <img id="slide-3" src="{% static 'images/pexels-gezerasph-23533488-2.jpg' %}" alt="Image3">
+      </div>
+      <div class="swiper-slide">
+        <img id="slide-4" src="{% static 'images/pexels-hyundaimotorgroup-19978403.jpg' %}" alt="Image4">
+      </div>
+    </div>
+  
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+
+<!-- linking the swiper js script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- linking the  custum script -->
+<script src="{% static 'scripts/coverPage.js' %}"></script>
